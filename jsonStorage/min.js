@@ -1,0 +1,1 @@
+let jsonStorage=key=>{let T=new Map(),K=key;T.save=key=>(localStorage.setItem(K??key,JSON.stringify(Object.fromEntries(T)??{})),T);T.load=key=>(Object.entries(JSON.parse(localStorage.getItem(K??key))??{}).forEach(([k,v])=>T.set(k,v)),T);return T}
