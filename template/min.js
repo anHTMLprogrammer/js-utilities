@@ -1,0 +1,1 @@
+let template=id=>{let t=document.getElementById(id);return function f(data,prepend){t.parentElement[prepend?'prepend':'append'](template.p.parseFromString(t.innerHTML.replaceAll(/\${(.*)}/g,(_,prop)=>prop.startsWith('\\')?prop.slice(1):data[prop]),'text/html').body.firstChild);return f}};template.p=new DOMParser()
